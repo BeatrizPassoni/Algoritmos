@@ -1,0 +1,20 @@
+//Faça uma função recursiva que calcule o valor da série S descrita a seguir
+//para um valor n maior do que zero a ser fornecido como parâmetro para ela:
+// S = 2 + 5/2 + 10/3 + .. 1+n^2/n
+#include <stdio.h>
+
+float calcula_serie(float n){
+    if(n==0)
+        return 0;
+    else
+        return (1+n*n)/n + calcula_serie(n-1);
+}
+
+int main() {
+    float n;
+    printf("-----Calcule a Serie 1+n^2/n-----\n");
+    printf("Insira o numero desejado: ");
+    scanf("%f", &n);
+    printf("Resultado: %.2f", calcula_serie(n));
+    return 0;
+}
