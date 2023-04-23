@@ -1,1 +1,30 @@
+/* 
+   Crie um programa que contenha uma matriz de float com três linhas e três
+   colunas. Imprima o endereço de cada posição dessa matriz.
+*/ 
+#include <stdio.h>
+void ler_matriz(float matriz[3][3]){
+    printf("Insira os valores da matriz 3x3\n");
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            printf("Insira o elemento [%d][%d]: ", i+1, j+1);
+            scanf("%f", &matriz[i][j]);
+        }
+    }
+}
+
+void imprime_endereco(float matriz[3][3]){
+    printf("\nValores dos enderecos\n");
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            printf("[%d][%d]: %p\n", i+1, j+1, &matriz[i][j]);
+        }
+    }
+}
+int main() {
+    float matriz[3][3];
+    ler_matriz(matriz);
+    imprime_endereco(matriz);
+    return 0;
+}
 
