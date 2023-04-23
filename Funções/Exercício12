@@ -1,0 +1,26 @@
+/*  
+   Escreva uma função recursiva que receba um valor inteiro e o retorne invertido. 
+   Exemplo: Número lido = 123.Número retornado = 321.
+*/
+#include <stdio.h>
+
+int inverte(int num){
+    int cifra;
+    if(num==0){
+        return num;
+    }
+    else{
+        cifra = num%10;
+        printf("%d", cifra);
+        return inverte(num/10);
+    }
+}
+
+int main() {
+    
+    int numero;
+    printf("Insira o numero desejado: ");
+    scanf("%d", &numero);
+    inverte(numero);
+    return 0;
+}
