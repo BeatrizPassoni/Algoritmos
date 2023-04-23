@@ -1,0 +1,27 @@
+// Crie uma função recursiva que retorne o menor elemento em um vetor.
+#include <stdio.h>
+
+int menor_elemento(int vetor[], int tam, int indice) {
+    if(tam==1) 
+        return vetor[indice];
+    else{
+        if(vetor[tam] < vetor[indice]) 
+        return menor_elemento(vetor, tam-1, tam);
+        else
+        return menor_elemento(vetor, tam-1, indice);  
+    }
+}
+int main() {
+    
+    int n;
+    printf("Insira a quantidade de elementos do vetor: ");
+    scanf("%d", &n);
+    int vetor[n];
+    for(int i=0; i<n; i++){
+        printf("Insira o (%d) elemento: ", i+1);
+        scanf("%d", &vetor[i]);
+    }
+    printf("O menor elemento do vetor e: %d\n", menor_elemento(vetor, n-1, 0));
+    
+    return 0;
+}
