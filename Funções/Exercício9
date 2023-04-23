@@ -1,0 +1,33 @@
+//9) Crie uma função recursiva que retorne a média dos elementos de um vetor de inteiros
+#include <stdio.h>
+
+void cria_vetor(int vetor[], int n){
+    printf("Insira os elementos\n");
+    for(int i = 0; i < n; i++){
+        printf("Insira o [%d] elemento: ", i + 1);
+        scanf("%d", &vetor[i]);
+    }
+}
+
+float media(int vetor[], int n){
+    if(n == 0){
+        return 0;
+    }
+    else{
+        float soma = vetor[n-1] + media(vetor, n-1);
+        return soma / n;
+    }
+}
+
+int main() {
+
+    int n;
+    printf("-----Calculo da media-----\n");
+    printf("Insira a quantidade de elementos que serao inseridos: ");
+    scanf("%d", &n);
+    int vetor[n];
+    cria_vetor(vetor, n);
+    printf("A media dos elementos e: %.2f\n", media(vetor, n));
+    
+    return 0;
+}
