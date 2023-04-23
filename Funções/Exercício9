@@ -1,4 +1,4 @@
-//9) Crie uma função recursiva que retorne a média dos elementos de um vetor de inteiros
+// Crie uma função recursiva que retorne a média dos elementos de um vetor de inteiros
 #include <stdio.h>
 
 void cria_vetor(int vetor[], int n){
